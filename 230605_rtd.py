@@ -43,20 +43,41 @@
 # print("학생",count,"명 성적의 총 합은 : ", sum)
 
 a=[] #주민등록 번호 리스트
-count=14 #하이픈 포함 14회 입력
-sum=0#암호식 총합 계산
-b=2 #체크
-for i in range(count):
+sum=0 #계산식 총합 계산
+b=2 #체크   
+result=0
+
+print("- 을 포함한 주민등록 번호 13자리를 입력해주세요")
+for i in range(13):
     a.append(input("주민등록 번호 입력 :"))
     if a[i].isdigit():
+        a[i]=int(a[i])
+        sum = a[i]*b
         print("TRUE")
-        sum+=a[i]*b
-        b+=1
-        if b==9:
-            b=2
     else:
+        b-=1
         print("FALSE")
+    if b!=9:
+        b+=1
+    elif b==9:
+        b=2
         
-if sum==255:
+a.append(input("주민등록 번호 입력:"))
+if a[13].isdigit():
+    a[13]=int(a[13])
+    print("TRUE")
+else:
+    print("FALSE")
+
+print("\n")
+print("입력된 주민등록 번호: ",end="")
+for i in range(14):
+    print(a[i],end="")
+print("\n")
     
+result=(11-(sum%11))% 10
+if result == a[13]:
+    print("올바른 주민등록 번호입니다.")
+else:
+    print("올바르지 않은 주민등록 번호 입니다.")
     
