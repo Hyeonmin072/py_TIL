@@ -26,18 +26,37 @@
 # print(pos[3])
 # print(pos[4])
 
-stdList=[]
-count=10
-a=1
+# stdList=[]
+# count=10
+# a=1
 
+# for i in range(count):
+#         print("학생",end='')
+#         print(i+1,end='')
+#         stdList.append(int(input("의 성적 : ")))
+        
+# sum=0
+
+# for l in range(count):
+#         sum+=stdList[l]
+        
+# print("학생",count,"명 성적의 총 합은 : ", sum)
+
+a=[] #주민등록 번호 리스트
+count=14 #하이픈 포함 14회 입력
+sum=0#암호식 총합 계산
+b=2 #체크
 for i in range(count):
-        print("학생",end='')
-        print(i+1,end='')
-        stdList.append(int(input("의 성적 : ")))
+    a.append(input("주민등록 번호 입력 :"))
+    if a[i].isdigit():
+        print("TRUE")
+        sum+=a[i]*b
+        b+=1
+        if b==9:
+            b=2
+    else:
+        print("FALSE")
         
-sum=0
-
-for l in range(count):
-        sum+=stdList[l]
-        
-print("학생",count,"명 성적의 총 합은 : ", sum)1
+if sum==255:
+    
+    
