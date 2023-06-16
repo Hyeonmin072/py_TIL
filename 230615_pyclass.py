@@ -61,11 +61,4 @@
 #             continue
 #         print(i,'*', dan,'=',i*dan)
 #     print('------------')
-a=5
-for i in range (a):
-    for k in range (a-i,5):
-        print('o',end='')
-    for j in range (a-1, 5):
-        print('x',end='')
-    print()
-  
+
